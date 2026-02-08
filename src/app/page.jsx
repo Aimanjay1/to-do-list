@@ -81,7 +81,7 @@ export default function App() {
   return (
     <>
       {/* Main container with full height, gradient background, and padding */}
-      <div className="min-h-screen bg-gradient-to-br from-orange-50 to-orange-100 p-8">
+      <div className="min-h-screen bg-linear-to-br from-orange-50 to-orange-100 p-8">
         {/* Centered container with max width */}
         <div className="max-w-6xl mx-auto">
           {" "}

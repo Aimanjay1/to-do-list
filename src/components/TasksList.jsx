@@ -52,7 +52,7 @@ export default function TasksList({ tasks, deleteTask, updateTaskStatus }) {
             className="relative group cursor-move hover:scale-[1.02] transition-transform"
           >
             {/* Render the Card component with task text */}
-            <Card text={task.text} dueDate={task.date} dueTime={task.time} />
+            <Card text={task.text} date={task.date} time={task.time} />
 
             {/* Delete Button (visible on hover) */}
             <button

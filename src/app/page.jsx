@@ -50,12 +50,12 @@ export default function App() {
     // If input is empty, do nothing
     if (!text || !dueDate) return;
     // Create specific new task object
-    const [date, time] = dueDate.split("T");
+    const [datePart, timePart] = dueDate.split("T");
     const newTask = {
       id: Date.now(), // Generate unique ID based on timestamp
       text: text, // Task description
-      dueDate: date,
-      dueTime: time, 
+      date: datePart,
+      time: timePart, 
       status: "todo", // Default status is 'todo'
     };
     // Update tasks state by appending the new task to the previous list

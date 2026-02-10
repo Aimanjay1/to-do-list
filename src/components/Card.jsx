@@ -2,15 +2,15 @@
 import { useState } from "react";
 
 // Card component receiving 'text' prop to display content
-function Card({ text, dueDate, dueTime }) {
+function Card({ text, date, time }) {
   // Render the card structure
   return (
     <div className="bg-amber-300 p-6 w-full rounded-lg shadow-md">
       <h2 className="text-xl font-bold mb-2">{text}</h2>
       {/* Display the divided date and time */}
       <div className="text-sm">
-        <p><span className="font-bold">Date:</span> {dueDate}</p>
-        <p><span className="font-bold">Time:</span> {dueTime}</p>
+        <p><span className="font-bold">Date:</span> {date}</p>
+        <p><span className="font-bold">Time:</span> {time}</p>
       </div>
     </div>
   );

@@ -33,8 +33,9 @@ export default function AddTask({ onAddTask, inputValue, setInputValue, dueDate,
             className="flex-1 px-6 py-4 rounded-2xl text-lg text-black bg-amber-50 focus:outline-none focus:ring-4 focus:ring-orange-300"
           />
           <input
-            type="datetime"
+            type="datetime-local"
             aria-label="New task"
+            className="px-6 py-4 rounded-2xl text-lg text-black bg-amber-50 focus:outline-none focus:ring-4 focus:ring-orange-300"
             value={dueDate}
             onChange={(e) => setDueDate(e.target.value)}
             onKeyDown={(e) => e.key === "Enter" && onAddTask()}

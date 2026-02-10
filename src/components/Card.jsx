@@ -2,17 +2,16 @@
 import { useState } from "react";
 
 // Card component receiving 'text' prop to display content
-function Card({ text, datetime }) {
+function Card({ text, dueDate, dueTime }) {
   // Render the card structure
   return (
-    // Container div with styling: amber background, padding, full width, rounded corners, shadow
     <div className="bg-amber-300 p-6 w-full rounded-lg shadow-md">
-      {/* Display the text prop as a heading */}
-      <h2>{text}</h2>
-      {/* Display the current date */}
-      <p className="font-bold">Date: {datetime}</p>
-      {/* Display the current time */}
-      <p className="font-bold">Time: {datetime}</p>
+      <h2 className="text-xl font-bold mb-2">{text}</h2>
+      {/* Display the divided date and time */}
+      <div className="text-sm">
+        <p><span className="font-bold">Date:</span> {dueDate}</p>
+        <p><span className="font-bold">Time:</span> {dueTime}</p>
+      </div>
     </div>
   );
 }

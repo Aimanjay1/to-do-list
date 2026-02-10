@@ -48,23 +48,18 @@ export default function App() {
     // Trim whitespace from the input value
     const text = inputValue.trim();
     // If input is empty, do nothing
-    if (!text) return;
+    if (!text || !dueDate) return;
     // Create specific new task object
+    const [date, time] = dueDate.split("T");
     const newTask = {
-      id: date, // Generate unique ID based on timestamp
+      id: Date.now(), // Generate unique ID based on timestamp
       text: text, // Task description
+      dueDate: date,
+      dueTime: time, 
       status: "todo", // Default status is 'todo'
     };
     // Update tasks state by appending the new task to the previous list
     setTasks((prev) => [...prev, newTask]);
-
-    const date = dueDate;
-    const endDate = {
-      id: date, // Generate unique ID based on timestamp
-      text: text, // Task description
-      status: "todo", // Default status is 'todo'
-    };
-    setDueDate((prev) => [...prev, endDate]);
     // Clear the input field
     setInputValue("");
     setDueDate("");

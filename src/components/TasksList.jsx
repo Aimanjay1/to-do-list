@@ -34,7 +34,7 @@ export default function TasksList({ tasks, deleteTask, updateTaskStatus }) {
   const TaskColumn = ({ title, list, status, bgClass, headerColor }) => (
     // Column container with flex property, styling, and drop event handlers
     <div
-      className={`flex-1 rounded-3xl p-6 shadow-lg min-h-[400px] ${bgClass}`}
+      className={`flex-1 rounded-3xl p-6 shadow-lg min-h-100 ${bgClass}`}
       onDragOver={handleDragOver}
       onDrop={(e) => handleDrop(e, status)}
     >
@@ -52,7 +52,7 @@ export default function TasksList({ tasks, deleteTask, updateTaskStatus }) {
             className="relative group cursor-move hover:scale-[1.02] transition-transform"
           >
             {/* Render the Card component with task text */}
-            <Card text={task.text} />
+            <Card text={task.text} dueDate={task.date} dueTime={task.time} />
 
             {/* Delete Button (visible on hover) */}
             <button

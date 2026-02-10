@@ -7,27 +7,27 @@ function Header() {
       {/* Main title of the application */}
       <h1 className="text-3xl font-bold">To-Do List</h1>
       {/* Navigation container with left margin */}
-      <nav className="flex ml-10">
+      {/* <nav className="flex ml-10"> */}
         {/* Unordered list for navigation links with spacing */}
-        <ul className="flex space-x-4">
+        {/* <ul className="flex space-x-4"> */}
           {/* Navigation item: Home */}
-          <li>
+          {/* <li>
             <a href="#">Home</a>
-          </li>
+          </li> */}
           {/* Navigation item: My Tasks */}
-          <li>
+          {/* <li>
             <a href="#">My Tasks</a>
-          </li>
+          </li> */}
           {/* Navigation item: Settings */}
-          <li>
+          {/* <li>
             <a href="#">Settings</a>
-          </li>
+          </li> */}
           {/* Navigation item: Profile */}
-          <li>
+          {/* <li>
             <a href="#">Profile</a>
-          </li>
-        </ul>
-      </nav>
+          </li> */}
+        {/* </ul>
+      </nav> */}
     </header>
   );
 }

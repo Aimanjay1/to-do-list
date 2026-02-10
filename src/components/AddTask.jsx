@@ -10,7 +10,7 @@ export default function AddTask({ onAddTask, inputValue, setInputValue }) {
     // React Fragment to group children without adding extra nodes to the DOM
     <>
       {/* Container div with gradient background, rounded corners, padding, margin, and shadow */}
-      <div className="bg-gradient-to-r from-orange-500 to-orange-600 rounded-3xl p-8 mb-8 shadow-lg">
+      <div className="bg-linear-to-r from-orange-500 to-orange-600 rounded-3xl p-8 mb-8 shadow-lg">
         {/* Heading for the add task section with white text and bold font */}
         <h2 className="text-2xl font-bold text-white mb-6">Add new task.</h2>
         {/* Flex container to align input and button, responsive (column on mobile, row on small screens) */}

@@ -30,7 +30,7 @@ export default function AddTask({ onAddTask, inputValue, setInputValue }) {
             // Trigger the onAddTask function when the "Enter" key is pressed
             onKeyDown={(e) => e.key === "Enter" && onAddTask()}
             // Styling for the input: flexible width, padding, rounded corners, text size, and focus states
-            className="flex-1 px-6 py-4 rounded-2xl text-lg bg-amber-50 focus:outline-none focus:ring-4 focus:ring-orange-300"
+            className="flex-1 px-6 py-4 rounded-2xl text-lg text-black bg-amber-50 focus:outline-none focus:ring-4 focus:ring-orange-300"
           />
           {/* Button to submit the new task */}
           <button

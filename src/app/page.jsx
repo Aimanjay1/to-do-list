@@ -15,6 +15,7 @@ import Footer from "@/components/Footer";
 export default function App() {
   // State for the input value of the new task
   const [inputValue, setInputValue] = useState("");
+  const [dueDate, setDueDate] = useState("");
 
   // State for the list of tasks, initialized from localStorage
   const [tasks, setTasks] = useState([]);
@@ -50,14 +51,23 @@ export default function App() {
     if (!text) return;
     // Create specific new task object
     const newTask = {
-      id: Date.now(), // Generate unique ID based on timestamp
+      id: date, // Generate unique ID based on timestamp
       text: text, // Task description
       status: "todo", // Default status is 'todo'
     };
     // Update tasks state by appending the new task to the previous list
     setTasks((prev) => [...prev, newTask]);
+
+    const date = dueDate;
+    const endDate = {
+      id: date, // Generate unique ID based on timestamp
+      text: text, // Task description
+      status: "todo", // Default status is 'todo'
+    };
+    setDueDate((prev) => [...prev, endDate]);
     // Clear the input field
     setInputValue("");
+    setDueDate("");
   }
 
   // Function to delete a task by ID
@@ -93,6 +103,8 @@ export default function App() {
             onAddTask={addTask}
             inputValue={inputValue}
             setInputValue={setInputValue}
+            dueDate={dueDate}
+            setDueDate={setDueDate}
           />
           {/* Render TasksList component with tasks and handler functions */}
           <TasksList

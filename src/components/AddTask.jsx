@@ -4,7 +4,7 @@ import React from "react";
 import { Plus } from "lucide-react";
 
 // Define the AddTask component that accepts onAddTask, inputValue, and setInputValue as props
-export default function AddTask({ onAddTask, inputValue, setInputValue }) {
+export default function AddTask({ onAddTask, inputValue, setInputValue, dueDate, setDueDate }) {
   // Return the JSX structure for the component
   return (
     // React Fragment to group children without adding extra nodes to the DOM
@@ -31,6 +31,13 @@ export default function AddTask({ onAddTask, inputValue, setInputValue }) {
             onKeyDown={(e) => e.key === "Enter" && onAddTask()}
             // Styling for the input: flexible width, padding, rounded corners, text size, and focus states
             className="flex-1 px-6 py-4 rounded-2xl text-lg text-black bg-amber-50 focus:outline-none focus:ring-4 focus:ring-orange-300"
+          />
+          <input
+            type="datetime"
+            aria-label="New task"
+            value={dueDate}
+            onChange={(e) => setDueDate(e.target.value)}
+            onKeyDown={(e) => e.key === "Enter" && onAddTask()}
           />
           {/* Button to submit the new task */}
           <button

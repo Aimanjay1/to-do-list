@@ -2,7 +2,7 @@
 import { useState } from "react";
 
 // Card component receiving 'text' prop to display content
-function Card({ text }) {
+function Card({ text, datetime }) {
   // Render the card structure
   return (
     // Container div with styling: amber background, padding, full width, rounded corners, shadow
@@ -10,9 +10,9 @@ function Card({ text }) {
       {/* Display the text prop as a heading */}
       <h2>{text}</h2>
       {/* Display the current date */}
-      <p className="font-bold">Date: {new Date().toLocaleDateString()}</p>
+      <p className="font-bold">Date: {datetime}</p>
       {/* Display the current time */}
-      <p className="font-bold">Time: {new Date().toLocaleTimeString()}</p>
+      <p className="font-bold">Time: {datetime}</p>
     </div>
   );
 }

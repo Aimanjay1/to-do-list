@@ -1,0 +1,3 @@
+export const labelStyle = { display:"block", color:"#64748b", fontSize:12, fontWeight:500, marginBottom:6, textTransform:"uppercase", letterSpacing:"0.06em" };
+export const inputStyle  = { width:"100%", padding:"10px 14px", background:"rgba(255,255,255,0.06)", border:"1px solid rgba(255,255,255,0.1)", borderRadius:10, color:"#e2e8f0", fontSize:14, fontFamily:"'DM Sans',sans-serif", outline:"none", boxSizing:"border-box" };
+export const iconBtn     = { background:"rgba(255,255,255,0.06)", border:"none", color:"#64748b", width:26, height:26, borderRadius:7, cursor:"pointer", fontSize:11, display:"flex", alignItems:"center", justifyContent:"center", flexShrink:0 };

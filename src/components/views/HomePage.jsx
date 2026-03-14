@@ -45,7 +45,8 @@ export function HomePage({ tasks, folders, onNavigate, onNewTask }) {
     const preview = folderTasks.slice(0, 3);
     const total   = folderTasks.length;
     const doneCnt = tasks.filter(t => t.folderId === f.id && t.completed).length;
-    return { ...f, total, doneCnt, urgent: urgent.length, preview };
+    const percent = total + doneCnt > 0 ? Math.round((doneCnt / (total + doneCnt)) * 100) : 0;
+    return { ...f, total, doneCnt, percent, urgent: urgent.length, preview };
   });
 
   const repeatIcon = (t) => t.repeatType === "daily" ? "🌅" : t.repeatType === "weekly" ? "📅" : "🗓";
@@ -214,9 +215,9 @@ export function HomePage({ tasks, folders, onNavigate, onNewTask }) {
               {(f.total + f.doneCnt) > 0 && (
                 <div style={{ marginTop:10 }}>
                   <div style={{ height:3, background:"rgba(255,255,255,0.06)", borderRadius:4, overflow:"hidden" }}>
-                    <div style={{ height:"100%", width:`${Math.round((f.doneCnt/(f.total+f.doneCnt))*100)}%`, background:f.color, borderRadius:4, transition:"width 0.6s ease" }} />
+                    <div style={{ height:"100%", width:`${f.percent}%`, background:f.color, borderRadius:4, transition:"width 0.6s ease" }} />
                   </div>
-                  <div style={{ fontSize:10, color:"#334155", marginTop:4 }}>{Math.round((f.doneCnt/(f.total+f.doneCnt))*100)}% complete</div>
+                  <div style={{ fontSize:10, color:"#334155", marginTop:4 }}>{f.percent}% complete</div>
                 </div>
               )}
             </div>
